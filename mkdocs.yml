@@ -2,7 +2,8 @@ site_name: LeetCode Docs
 pages:
 - Home: index.md
 - About: about.md
+- ZTemplatePage: templateLeetCode.md 
 theme: readthedocs
 site_author: JSSU
 
-repo_url: https://github.com/JSSU/DocLeetCoode/tree/gh-pages
+repo_url: https://github.com/JSSU/DocLeetCoode/
