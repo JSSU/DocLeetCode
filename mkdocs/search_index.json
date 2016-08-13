@@ -47,12 +47,12 @@
         }, 
         {
             "location": "/templateLeetCode/", 
-            "text": "This is a Template Pages\n\n\nLeetCode '#3\n\n\nHere is the content", 
+            "text": "This is a Template Pages\n\n\nLeetCode #3\n\n\nHere is the content", 
             "title": "ZTemplatePage"
         }, 
         {
             "location": "/templateLeetCode/#this-is-a-template-pages", 
-            "text": "LeetCode '#3  Here is the content", 
+            "text": "LeetCode #3  Here is the content", 
             "title": "This is a Template Pages"
         }
     ]
