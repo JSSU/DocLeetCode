@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-08-12</lastmod>
+     <lastmod>2016-08-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,15 @@
     
     <url>
      <loc>None/about/</loc>
-     <lastmod>2016-08-12</lastmod>
+     <lastmod>2016-08-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/templateLeetCode/</loc>
+     <lastmod>2016-08-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
