@@ -1,7 +1,7 @@
 site_name: LeetCode Docs
 pages:
 - Home: index.md
-# - About: about.md
+- About: about.md
 theme: readthedocs
 site_author: JSSU
 
