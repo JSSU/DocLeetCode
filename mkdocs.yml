@@ -1,8 +1,9 @@
 site_name: LeetCode Docs
 pages:
 - Home: index.md
+- Menu: menu.md
 - About: about.md
-- ZTemplatePage: templateLeetCode.md 
+- ZTemplatePage: templateLeetCode.md
 theme: readthedocs
 site_author: JSSU
 
