@@ -21,6 +21,16 @@
             "title": "Project layout"
         }, 
         {
+            "location": "/menu/", 
+            "text": "Menu\n\n\nList of Content", 
+            "title": "Menu"
+        }, 
+        {
+            "location": "/menu/#menu", 
+            "text": "List of Content", 
+            "title": "Menu"
+        }, 
+        {
             "location": "/about/", 
             "text": "Hoc vulneret\n\n\nCum superabat aurata\n\n\nLorem \nmarkdownum fleturi\n en Aetne poscitur ausam, sine, venatu. Caret versus\net tum sed tellus \noderat male fata\n plurima ubi ortus sororis verba, erit\nStyge lacerae, solitis. Ulixes aperta minanti, frangitur fortunata domum tibi\nlacertos Haemoniae.\n\n\nEquos repperit haerent via sic fratrisque ramos. Cacumina parem victor alumno et\ndum nec eadem percussis \nora quod ipsa\n patientia Sirinosque laetior comae.\n\n\nFestinus sua nam aberat parentque voluntas fuit\n\n\nNati pirithoi Mensis flammamque iam, ab quique scelerate recepi multae timendi\nloquendo illi; tergum exsiluere monstri. Succurrere \nubera fertur\nfacis\n cura; huic sibi aliter pyropo, poenam illa\ncentimanum ignaram uvae tui \nsecedit\n? Agantur sublimis ducem fata, serieque\ndiscordia hominum persequar, nec cum furcas malo auras et media dubitate.\nCereremque si huic nocens, \ntelo\n?\n\n\n\n\nVidet est est exitiabile actum equos\n\n\nVulgata ritu propter illas et summa et\n\n\nPrimum sustineant Aeoliique ait his est conspecta\n\n\nEadem iniuria tot fodientibus tum exitus tellus\n\n\n\n\nInviso inpulit\n\n\nGurgite adversas et terrae locorum membra? Tale quam membra causa, illa os\nprocul Ladonis, ex tendit amictu templo. Signa edere eris spemque vivit! Dextris\nin mandate excipit armentaque iamque tectoque undas animans, sub\n\nat\n quam\n\net\n numinis eadem uritur\nquam secuta \nvel\n.\n\n\n\n\nInpositaque quod\n\n\nEgo in\n\n\nIaculum senectus senectus ut actaque Pelia fulmine\n\n\nAb ferae dum parant pectus\n\n\nAd ausa\n\n\nOssibus Troezen Faunine\n\n\n\n\nQuem gravitate canes: luna circumdata paratur; \nnon\n una Nixosque se corde, quam\n\ndum\n, visam, centum. Nubes putes relicta \numeros tumidarum\ncolonus\n, tecta; cremabo, nec. \nDementia\nmediam\n, utroque ruere: huc lati, nec ait Pactolides Caesarea viscera voluptas\nvultus \nsucos\n! Tum quisquam gemitus parentali Dixit nos a aethere, insula,\ntrabibus indulgens, triplicis.\n\n\nDeserti irascentemque placuit ratione magno. Pronusque deos esse subiectis, qui\nne iuvenem terque echidnis et grave venitque nullos nova abnuat. Instantem\ncruorem in ora vertatur angues; ubi hoc naufragus rapuere, atque \nsolem\nsecuriferumque\n.", 
             "title": "About"
@@ -47,12 +57,12 @@
         }, 
         {
             "location": "/templateLeetCode/", 
-            "text": "This is a Template Pages", 
+            "text": "This is a Template Pages\n\n\nLeetCode #3\n\n\nHere is the content", 
             "title": "ZTemplatePage"
         }, 
         {
             "location": "/templateLeetCode/#this-is-a-template-pages", 
-            "text": "", 
+            "text": "LeetCode #3  Here is the content", 
             "title": "This is a Template Pages"
         }
     ]
