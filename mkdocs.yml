@@ -3,7 +3,9 @@ pages:
 - Home: index.md
 - Menu: menu.md
 - About: about.md
+- Links: usefullinks.md
 - ZTemplatePage: templateLeetCode.md
+- 355 : Leetcode/355.md 
 theme: readthedocs
 site_author: JSSU
 
