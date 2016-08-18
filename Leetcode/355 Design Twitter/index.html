@@ -24,8 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "355. Design Twitter";
-    var mkdocs_page_input_path = "Leetcode\355.md";
-    var mkdocs_page_url = "/Leetcode/355/";
+    var mkdocs_page_input_path = "Leetcode\355 Design Twitter.md";
+    var mkdocs_page_url = "/Leetcode/355 Design Twitter/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -101,6 +101,12 @@
                 <li class="toctree-l3"><a href="#solution">Solution</a></li>
                 
             
+                <li class="toctree-l3"><a href="#given-template">Given template</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#sum">Sum</a></li>
+                
+            
             </ul>
         
     </li>
@@ -155,7 +161,7 @@ following methods:</p>
 <li><strong>unfollow(followerId, followeeId)</strong>: Follower unfollows a followee.</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<pre><code>Twitter twitter = new Twitter();
+<pre><code class="cpp">Twitter twitter = new Twitter();
 
 // User 1 posts a new tweet (id = 5).
 twitter.postTweet(1, 5);
@@ -181,8 +187,53 @@ twitter.unfollow(1, 2);
 twitter.getNewsFeed(1);
 </code></pre>
 
-<p><strong>tag</strong>: Hash Table Heap Design</p>
+<p><strong>Tags</strong>: Hash Table Heap Design</p>
 <h2 id="solution">Solution</h2>
+<h2 id="given-template">Given template</h2>
+<pre><code class="cpp">class Twitter {
+public:
+    /** Initialize your data structure here. */
+    Twitter() {
+
+    }
+
+    /** Compose a new tweet. */
+    void postTweet(int userId, int tweetId) {
+
+    }
+
+    /** Retrieve the 10 most recent tweet ids in the user's
+     news feed. Each item in the news feed must be posted by 
+     users who the user followed or by the user herself. 
+     Tweets must be ordered from most recent to least recent. */
+    vector&lt;int&gt; getNewsFeed(int userId) {
+
+    }
+
+    /** Follower follows a followee. If the operation is invalid, 
+    it should be a no-op. */
+    void follow(int followerId, int followeeId) {
+
+    }
+
+    /** Follower unfollows a followee. If the operation is invalid, 
+    it should be a no-op. */
+    void unfollow(int followerId, int followeeId) {
+
+    }
+};
+
+/**
+ * Your Twitter object will be instantiated and called as such:
+ * Twitter obj = new Twitter();
+ * obj.postTweet(userId,tweetId);
+ * vector&lt;int&gt; param_2 = obj.getNewsFeed(userId);
+ * obj.follow(followerId,followeeId);
+ * obj.unfollow(followerId,followeeId);
+ */
+</code></pre>
+
+<h2 id="sum">Sum</h2>
               
             </div>
           </div>
