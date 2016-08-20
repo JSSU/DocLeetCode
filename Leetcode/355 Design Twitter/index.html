@@ -84,6 +84,20 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../../Reference/functionDetails/">Reference</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Reference/One%20VS%20another/">Compare</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../../templateLeetCode/">ZTemplatePage</a>
         
     </li>
@@ -189,6 +203,83 @@ twitter.getNewsFeed(1);
 
 <p><strong>Tags</strong>: Hash Table Heap Design</p>
 <h2 id="solution">Solution</h2>
+<pre><code class="cpp">class Twitter
+{
+    struct Tweet
+    {
+        int time;
+        int id;
+        Tweet(int t, int i)
+        {
+            time = t;
+            id = i;
+        }
+        //Tweet(int time, int id) : time(time), id(id) {}
+    };
+
+    unordered_map&lt;int, vector&lt;Tweet&gt;&gt; tweets; // [u] = array of tweets by u
+    unordered_map&lt;int, unordered_set&lt;int&gt;&gt; following; // [u] = array of users followed by u
+
+    int time;
+
+public:
+    Twitter() : time(0) {}
+
+    void postTweet(int userId, int tweetId)
+    {
+        tweets[userId].emplace_back(time++, tweetId);
+    }
+
+    vector&lt;int&gt; getNewsFeed(int userId)
+    {
+        vector&lt;pair&lt;Tweet*, Tweet*&gt;&gt; h; // pair of pointers (begin, current)
+
+        for (auto&amp; u: following[userId])
+        {
+            auto&amp; t = tweets[u];
+            if (t.size() &gt; 0)
+                h.emplace_back(t.data(), t.data() + t.size() - 1);
+        }
+        auto&amp; t = tweets[userId]; // self
+        if (t.size() &gt; 0)
+            h.emplace_back(t.data(), t.data() + t.size() - 1);
+
+        auto f = [](const pair&lt;Tweet*, Tweet*&gt;&amp; x, const pair&lt;Tweet*, Tweet*&gt;&amp; y) {
+            return x.second-&gt;time &lt; y.second-&gt;time;
+        };
+        make_heap(h.begin(), h.end(), f);
+
+        const int n = 10;
+        vector&lt;int&gt; o;
+        o.reserve(n);
+        for (int i = 0; (i &lt; n) &amp;&amp; !h.empty(); ++i)
+        {
+            pop_heap(h.begin(), h.end(), f);
+
+            auto&amp; hb = h.back();
+            o.push_back(hb.second-&gt;id);
+
+            if (hb.first == hb.second--)
+                h.pop_back();
+            else
+                push_heap(h.begin(), h.end(), f);
+        }
+        return o;
+    }
+
+    void follow(int followerId, int followeeId)
+    {
+        if (followerId != followeeId)
+            following[followerId].insert(followeeId);
+    }
+
+    void unfollow(int followerId, int followeeId)
+    {
+        following[followerId].erase(followeeId);
+    }
+};
+</code></pre>
+
 <h2 id="given-template">Given template</h2>
 <pre><code class="cpp">class Twitter {
 public:
