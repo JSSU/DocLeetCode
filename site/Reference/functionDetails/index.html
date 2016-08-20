@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="JSSU">
+  
+  <title>Reference - LeetCode Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Reference";
+    var mkdocs_page_input_path = "Reference\functionDetails.md";
+    var mkdocs_page_url = "/Reference/functionDetails/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> LeetCode Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../menu/">Menu</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../usefullinks/">Links</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Reference</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#access-specifiers">Access Specifiers</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#heap">Heap</a></li>
+                
+                    <li><a class="toctree-l4" href="#make_heap">make_heap()</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#lambda-functions">Lambda functions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../One%20VS%20another/">Compare</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../templateLeetCode/">ZTemplatePage</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Leetcode/355%20Design%20Twitter/">355. Design Twitter</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">LeetCode Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Reference</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JSSU/DocLeetCoode/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>﻿# Function or predefine items</p>
+<h2 id="access-specifiers">Access Specifiers</h2>
+<p><code>public</code> members can be accessed from outside the class.<br />
+<code>protected</code> members can be accessed in the class and its derived classes &amp;<br />
+<code>private</code> members can be only accessed within the class. </p>
+<blockquote>
+<p>Note that the member being <code>static</code> or not the same Access Specification rules
+apply to it.
+<code>static</code> implies the storage specification and that the some member will be shared 
+across all the instances of the class it does not change where the member can be 
+accessed.</p>
+</blockquote>
+<h2 id="heap">Heap</h2>
+<h3 id="make_heap">make_heap()</h3>
+<pre><code class="cpp">// range heap example
+#include &lt;iostream&gt;     // std::cout
+#include &lt;algorithm&gt;    // std::make_heap, std::pop_heap, std::push_heap, std::sort_heap
+#include &lt;vector&gt;       // std::vector
+
+using namespace std;
+int main () {
+  //int myints[] = {10,20,30,5,15};
+  //std::vector&lt;int&gt; v(myints,myints+5);
+
+  vector&lt;int&gt; v{10,20,30,5,15};
+  std::make_heap (v.begin(),v.end());
+  std::cout &lt;&lt; &quot;initial max heap   : &quot; &lt;&lt; v.front() &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;v range :&quot;;
+  for (unsigned i=0; i&lt;v.size(); i++)
+    std::cout &lt;&lt; ' ' &lt;&lt; v[i];   std::cout &lt;&lt; '\n';
+
+  std::pop_heap (v.begin(),v.end()); v.pop_back();
+  std::cout &lt;&lt; &quot;max heap after pop : &quot; &lt;&lt; v.front() &lt;&lt; '\n';
+    std::cout &lt;&lt; &quot;v range :&quot;;
+  for (unsigned i=0; i&lt;v.size(); i++)
+    std::cout &lt;&lt; ' ' &lt;&lt; v[i];   std::cout &lt;&lt; '\n';
+//---------------------------------------------
+  v.pop_back(); std::pop_heap (v.begin(),v.end()); 
+  std::cout &lt;&lt; &quot;max heap after pop : &quot; &lt;&lt; v.front() &lt;&lt; '\n';
+    std::cout &lt;&lt; &quot;v :&quot;;
+  for (unsigned i=0; i&lt;v.size(); i++)
+    std::cout &lt;&lt; ' ' &lt;&lt; v[i];   std::cout &lt;&lt; '\n';
+
+
+
+  v.push_back(99); std::push_heap (v.begin(),v.end());
+  std::cout &lt;&lt; &quot;max heap after push: &quot; &lt;&lt; v.front() &lt;&lt; '\n';
+  std::cout &lt;&lt; &quot;final sorted range :&quot;;
+  for (unsigned i=0; i&lt;v.size(); i++)
+    std::cout &lt;&lt; ' ' &lt;&lt; v[i];   std::cout &lt;&lt; '\n';
+
+  std::sort_heap (v.begin(),v.end());
+ //make_heap(v.begin(),v.end());
+  std::cout &lt;&lt; &quot;final sorted range :&quot;;
+  for (unsigned i=0; i&lt;v.size(); i++)
+    std::cout &lt;&lt; ' ' &lt;&lt; v[i];
+
+  std::cout &lt;&lt; '\n';
+
+  return 0;
+}
+</code></pre>
+
+<h4 id="result">result</h4>
+<pre><code>initial max heap   : 30
+v range : 30 20 10 5 15
+max heap after pop : 20
+v range : 20 15 10 5
+max heap after pop : 15
+v : 15 10 20
+max heap after push: 99
+final sorted range : 99 15 20 10
+final sorted range : 10 15 20 99
+</code></pre>
+<h2 id="lambda-functions">Lambda functions</h2>
+<p>Constructs a closure: an unnamed function object capable of capturing variables in scope.
+Syntax</p>
+<p>[ <code>capture-list</code> ] ( <code>params</code> ) mutable(optional) constexpr(optional)(c++17) exception attribute -&gt; ret { body }  (1)<br />
+[ <code>capture-list</code> ] ( <code>params</code> ) -&gt; ret { <code>body</code> } (2) <br />
+[ <code>capture-list</code> ] ( <code>params</code> ) { <code>body</code> }  (3) <br />
+[ <code>capture-list</code> ] { <code>body</code> } (4) <br />
+1) Full declaration.
+2) Declaration of a const lambda: the objects captured by copy cannot be modified.
+3) Omitted trailing-return-type: the return type of the closure's operator() is determined according to the following rules:</p>
+<ul>
+<li>if the body consists of nothing but a single return statement with an expression, 
+the return type is the type of the returned expression 
+(after lvalue-to-rvalue, array-to-pointer, or function-to-pointer 
+implicit conversion);</li>
+<li>otherwise, the return type is void.
+(until C++14)  </li>
+<li>The return type is deduced from return statements as if for a 
+function whose return type is declared auto.
+4) Omitted parameter list: function takes no arguments, as if the parameter list was ().</li>
+</ul>
+<p>Explanation<br />
+<code>mutable</code>   -   allows body to modify the parameters captured by copy, and to call their non-const member functions<br />
+<code>constexpr(C++17)</code>  -   explicitly specifies that the function call operator is a constexpr function. When this specifier is not present, the function call operator will be constexpr anyway, if it happens to satisfy all constexpr function requirements<br />
+<code>exception</code> -   provides the exception specification or the noexcept clause for operator() of the closure type<br />
+<code>attribute</code> -   provides the attribute specification for operator() of the closure type<br />
+<code>capture-list</code>  -   a comma-separated list of zero or more captures, optionally beginning with a capture-default.<br />
+Capture list can be passed as follows (see below for the detailed description):  <br />
++ <strong>[a,&amp;b]</strong> where a is captured by value and b is captured by reference.<br />
++ <strong>[this]</strong> captures the this pointer by value
++ <strong>[&amp;]</strong> captures all automatic variables odr-used in the body of the lambda by reference
++ <strong>[=]</strong> captures all automatic variables odr-used in the body of the lambda by value
++ <strong>[]</strong> captures nothing<br />
+<code>params</code>    -   The list of parameters, as in named functions, except that default arguments are not allowed (until C++14). If auto is used as a type of a parameter, the lambda is a generic lambda. (since C++14)<br />
+<code>ret</code>   -   Return type. If not present it's implied by the function return statements (or void if it doesn't return any value)<br />
+<code>body</code>  -   Function body
+The lambda expression is a prvalue expression whose value is 
+<code>(until C++17)</code>whose result object is <code>(since C++17)</code> an unnamed
+ temporary object of unique unnamed non-union non-aggregate class
+ type, known as closure type, which is declared (for the purposes 
+ of ADL) in the smallest block scope, class scope, or namespace 
+ scope that contains the lambda expression. The closure type has 
+ the following members:</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../One%20VS%20another/" class="btn btn-neutral float-right" title="Compare">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../usefullinks/" class="btn btn-neutral" title="Links"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JSSU/DocLeetCoode/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../usefullinks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../One%20VS%20another/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ pages:
 - Menu: menu.md
 - About: about.md
 - Links: usefullinks.md
+- Reference: Reference/functionDetails.md 
+- Compare: Reference/One VS another.md
 - ZTemplatePage: templateLeetCode.md
 - "355. Design Twitter" : Leetcode/355 Design Twitter.md 
 theme: readthedocs
