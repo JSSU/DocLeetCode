@@ -1,6 +1,8 @@
 ﻿# Function or predefine items
 
-## Access Specifiers
+## A
+
+### Access Specifiers
 `public` members can be accessed from outside the class.  
 `protected` members can be accessed in the class and its derived classes &  
 `private` members can be only accessed within the class. 
@@ -11,10 +13,74 @@
 across all the instances of the class it does not change where the member can be 
 accessed.
 
+## B
 
-## Heap
+## C
 
-### make_heap()
+## D
+
+## E
+
+## F
+
+### Functor
+
+ A functor is pretty much just a class which defines the operator(). 
+ That lets you create objects which "look like" a function:
+
+ ```
+ // this is a functor
+struct add_x {
+  add_x(int x) : x(x) {}
+  int operator()(int y) const { return x + y; }
+
+private:
+  int x;
+};
+
+// Now you can use it like this:
+add_x add42(42); // create an instance of the functor class
+int i = add42(8); // and "call" it
+assert(i == 50); // and it added 42 to its argument
+
+std::vector<int> in; // assume this contains a bunch of values)
+std::vector<int> out(in.size());
+// Pass a functor to std::transform, which calls the functor on every element 
+// in the input sequence, and stores the result to the output sequence
+std::transform(in.begin(), in.end(), out.begin(), add_x(1)); 
+assert(out[i] == in[i] + 1); // for all i
+```
+
+There are a couple of nice things about functors. One is that unlike regular functions, 
+they can contain state. The above example creates a function which adds 42 to whatever 
+you give it. But that value 42 is not hardcoded, it was specified as a constructor 
+argument when we created our functor instance. I could create another adder, which 
+added 27, just by calling the constructor with a different value. This makes them 
+nicely customizable.  
+
+As the last lines show, you often pass functors as arguments to other functions such 
+as std::transform or the other standard library algorithms. You could do the same with 
+a regular function pointer except, as I said above, functors can be "customized" because 
+they contain state, making them more flexible (If I wanted to use a function pointer, 
+I'd have to write a function which added exactly 1 to its argument. The functor is 
+general, and adds whatever you initialized it with), and they are also potentially more 
+efficient. In the above example, the compiler knows exactly which function `std::transform` 
+should call. It should call `add_x::operator()`. That means it can inline that function call. 
+And that makes it just as efficient as if I had manually called the function on each value 
+of the vector.  
+
+If I had passed a function pointer instead, the compiler couldn't immediately see which 
+function it points to, so unless it performs some fairly complex global optimizations, it'd 
+have to dereference the pointer at runtime, and then make the call.  
+
+
+## G
+
+## H
+
+### heap
+
+#### make_heap()
 
 ```cpp
 // range heap example
@@ -76,7 +142,16 @@ int main () {
     final sorted range : 99 15 20 10
     final sorted range : 10 15 20 99
 
-## Lambda functions
+
+## I 
+
+## J
+
+## K
+
+## L
+
+### Lambda functions
 Constructs a closure: an unnamed function object capable of capturing variables in scope.
 Syntax
 
@@ -120,7 +195,58 @@ The lambda expression is a prvalue expression whose value is
  type, known as closure type, which is declared (for the purposes 
  of ADL) in the smallest block scope, class scope, or namespace 
  scope that contains the lambda expression. The closure type has 
- the following members:
+ the following members:...
+ ```cpp
+ int x = 4;
+ auto y = [&r = x, x = x+1]()->int {
+            r += 2;
+            return x+2;
+         }();  // Updates ::x to 6, and initializes y to 7.
+```
+
+## M
+
+## N
+
+## O 
+
+## P
+
+## Q
+
+## R
+
+## S
+
+## T
+
+## U
+
+### unordered_map
+#### Syntax:
+- [key] = value
+- .insert
+- .erase 
+
+## V
+
+### vector<>
+#### Syntax:
+- .emplace_back(`the primeters`)
+
+
+
+## W
+
+## X
+
+## Y 
+
+## Z
+
+
+
+
 
 
 
