@@ -98,4 +98,95 @@ int main() {
 }
 ```
 
+## map VS unordered_map
 
+As already mentioned, `map` allows to iterate over the elements in a sorted way, 
+but `unordered_map` does not. This is very important in many situations, for example 
+displaying a collection (e.g. address book). This also manifests in other indirect ways 
+like: (1) Start iterating from the iterator returned by `find()`, or 
+(2) existence of member functions like `lower_bound()`.
+
+Also, I think there is some difference in the worst case search complexity.
+
+- For map, it is O( lg N )
+
+
+- For unordered_map, it is O( N ) [This may happen when the hash function is not good leading to too many hash collisions.]
+
+
+The same is applicable for worst case deletion complexity.
+
+Note: average std::unordered_map is O(1) for search complexity 
+ 
+## set VS unordered_set
+
+Came across this good question, which is similar but not at all same 
+since it talks about Java, which has different implementation of hash-tables, 
+by virtue of having synchronized accessor /mutators Differences between 
+HashMap and Hashtable?
+
+So what is the difference in C++ implementation of set and unordered_set ? 
+This question can be ofcourse extended to map vs unordered_map and so on for 
+other C++ containers.
+
+Here is my initial assessment
+
+**set** : While standard doesnt explicitly asks it to be implemented as trees, 
+the time-complexity constraint asked for its operations for find/insert, means 
+it will always be implemented as tree. Usually as RB tree (as seen in GCC 4.8), 
+which is height-balanced. Since they are height balanced, they have predictable 
+time-complexity for find()
+
+Pros : Compact (compared to other DS in comparison)
+
+Con : Access time complexity is O(lg n)
+
+**unordered_set** : While standard doesnt explicitly asks it to be implemented as 
+trees, the time-complexity constraint asked for its operations for find/insert, 
+means it will always be implemented as hash-table.
+
+Pros :
+* Faster (promises amortized O(1) for search)
+* Easy to convert basic primitives to thread-safe, as compared to tree-DS
+
+Cons :
+1.Look up not guaranteed to be O(1) Therotical worst case is O(n)
+2.Not as compact as tree. (for practical purposes load factors is never 1)
+
+Note : The O(1), for hashtable comes from the assumption that there are no 
+collision. Even with load-factor of .5, every second variable insertion is 
+leading to collision. It could be observed that the load-factor of hash-table 
+is inversely proportional to the number of operations required for accessing 
+a element in it. More we reduce #operations, sparser hash-table. When the 
+element stored are of size comparable to pointer, then overhead is quite significant.
+
+Edit : Since most are saying question contains sufficient answer in it, 
+I am changing the question to "Did I miss any difference between map/set 
+for performance analysis that one should know ??"
+
+
+I think you've generally answered your own question, however, this:
+>Not as compact as tree. (for practical purposes load factors is never 1)
+
+is not necessarily true. Each node of a tree (we'll assume it's a red-black tree) 
+for a type T utilizes space that is equal to at least 
+`2 * pointer_size + sizeof(T) + sizeof(bool)`. 
+This may be `3 * pointer size` depending on whether the tree contains a parent 
+pointer for each tree node.  
+
+Compare this to a hash-map: there will be wasted array space for each hash map due 
+to the fact that `load factor < 1` as you've said. However, assuming the hash map uses 
+singly linked lists for chaining (and really, there's no real reason not to), each 
+element inserted take only sizeof(T) + pointer size. 
+
+Note that this analysis ignores any overhead which may come from extra space used 
+by alignment.
+
+For any element T which has a small size (so, any basic type), the size of the 
+pointers and other overhead dominates. At a load factor of `> 0.5` (for example)
+the `std::unordered_set` may indeed use up less memory than the equivalent `std::set`.
+
+The other big missing point is the fact that iterating through a `std::set` is guaranteed 
+to produce an ordering from smallest to largest, based on the given comparison function, 
+while iterating through an `std::unordered_set` will return the values in a "random" order. 
+ 
